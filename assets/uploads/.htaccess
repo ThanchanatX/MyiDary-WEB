@@ -1,0 +1,4 @@
+# assets/uploads/.htaccess
+<FilesMatch "\.php$">
+    Deny from all
+</FilesMatch>

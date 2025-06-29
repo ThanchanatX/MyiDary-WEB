@@ -1,0 +1,312 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f3f3f3;
+    margin-top: 20px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideInBottom {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card & Hover Effects */
+.diary-card, .timeline > li {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+.diary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease;
+}
+
+.toast {
+    animation: slideInBottom 0.5s ease forwards;
+}
+
+.btn, .form-control {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.form-control:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.card-link {
+    transition: color 0.3s ease;
+}
+.card-link:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+/* Timeline */
+.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    bottom: 7px;
+    left: 20%;
+    width: 7px;
+    margin-left: -2.5px;
+    background: #198754;
+}
+.timeline > li {
+    position: relative;
+    min-height: 50px;
+    padding: 20px 0;
+}
+
+.timeline .timeline-time {
+    position: absolute;
+    left: 0;
+    width: 18%;
+    top: 30px;
+    text-align: right;
+}
+.timeline .timeline-time .date,
+.timeline .timeline-time .time {
+    display: block;
+    font-weight: 600;
+}
+.timeline .timeline-time .date {
+    font-size: 12px;
+    color: #8a8a8a;
+    line-height: 16px;
+}
+.timeline .timeline-time .time {
+    font-size: 20px;
+    color: #0b6d3f;
+    line-height: 24px;
+}
+
+.timeline .timeline-icon {
+    position: absolute;
+    left: 15%;
+    top: 40px;
+    width: 10%;
+    text-align: center;
+}
+.timeline .timeline-icon a {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #fff;
+    text-decoration: none;
+    background: #ffffff;
+    border: 5px solid #10613b;
+    border-radius: 50%;
+    transition: border-color 0.3s linear, background-color 0.3s ease;
+}
+.timeline .timeline-icon a:hover {
+    background-color: #007bff;
+    border-color: #0056b3;
+}
+
+.timeline .timeline-body {
+    position: relative;
+    margin: 0 17% 0 23%;
+    padding: 20px 25px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.timeline .timeline-body:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    border: 10px solid transparent;
+    border-right-color: #fff;
+}
+
+.timeline-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e7eb;
+    line-height: 30px;
+}
+.timeline-header .username {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d353c;
+}
+.timeline-header .username a {
+    color: #007bff;
+    text-decoration: none;
+}
+.timeline-header .username a:hover {
+    text-decoration: underline;
+}
+
+.timeline-content {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+}
+
+.timeline-footer {
+    background: #fff;
+    border-top: 1px solid #e2e7ec;
+    padding-top: 15px;
+}
+.timeline-footer a:not(.btn) {
+    color: #575d63;
+}
+.timeline-footer a:not(.btn):hover,
+.timeline-footer a:not(.btn):focus {
+    color: #2d353c;
+}
+
+.timeline-likes {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6d767f;
+}
+.timeline-likes .stats-total {
+    display: inline-block;
+    line-height: 20px;
+}
+
+.timeline-comment-box {
+    margin: 0 -25px;
+    padding: 20px 25px;
+    background: #f2f3f4;
+}
+.timeline-comment-box .user {
+    float: left;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.timeline-comment-box .user img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.timeline-comment-box .input {
+    margin-left: 44px;
+}
+.timeline-footer .btn:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+.mood-icon {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 768px) {
+    .timeline:before {
+        left: 10px;
+    }
+
+    .timeline > li {
+        padding-left: 30px;
+        padding-right: 10px;
+    }
+
+    .timeline .timeline-time {
+        position: static;
+        width: auto;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .timeline .timeline-icon {
+        position: static;
+        width: auto;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .timeline .timeline-body {
+        margin: 0;
+        padding: 15px;
+    }
+
+    .timeline .timeline-body:before {
+        left: 10px;
+        top: -10px;
+        border: 10px solid transparent;
+        border-bottom-color: #fff;
+        border-right-color: transparent;
+        transform: rotate(90deg);
+    }
+
+    .timeline-header .username {
+        font-size: 14px;
+    }
+
+    .timeline-content {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .timeline-footer {
+        font-size: 12px;
+        padding-top: 10px;
+    }
+
+    .timeline-comment-box {
+        margin: 0;
+        padding: 15px;
+    }
+
+    .timeline-comment-box .input {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .timeline-comment-box .user {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+.latest-entry .timeline-body {
+    border: 2px solid #198754;
+    background-color: #eafaf1;
+    animation: pulseHighlight 1s ease;
+}
+
+@keyframes pulseHighlight {
+    0% { box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.5); }
+    100% { box-shadow: 0 0 0 10px rgba(25, 135, 84, 0); }
+}
+header .btn i {
+    font-size: 0.9rem;
+  }
+header a img.rounded-circle {
+  transition: transform 0.2s;
+}
+
+header a:hover img.rounded-circle {
+  transform: scale(1.05);
+}
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ไม่พบหน้าที่คุณค้นหา (404)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+    }
+
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .error-content h1 {
+      font-size: 6rem;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+
+    .error-content p {
+      font-size: 1.5rem;
+      color: #6c757d;
+      margin-bottom: 2rem;
+    }
+
+    .lottie-animation {
+      max-width: 400px;
+      margin-bottom: 2rem;
+    }
+
+    .btn-home {
+      font-size: 1.2rem;
+      padding: 10px 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="error-container">
+  <div class="lottie-animation"></div>
+  <div class="error-content">
+    <h1>404</h1>
+    <p>ไม่พบหน้าที่คุณกำลังค้นหา</p>
+    <a href="index.php" class="btn btn-primary btn-home">
+      <i class="fas fa-home me-2"></i>กลับสู่หน้าหลัก
+    </a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+  lottie.loadAnimation({
+    container: document.querySelector('.lottie-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://lottie.host/d987597c-7676-4424-8817-7fca6dc1a33e/BVrFXsaeui.json'
+  });
+</script>
+
+</body>
+</html>
